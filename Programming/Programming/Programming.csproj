@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{BEC5902F-838C-4A52-8A79-04116DF08E58}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>Programming</RootNamespace>
+        <AssemblyName>Programming</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Programming, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>bin\Debug\Programming.exe</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Deployment" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Net.Http" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Model\AppColors.cs" />
+        <Compile Include="Model\Contact.cs" />
+        <Compile Include="Model\Enums\Colors.cs" />
+        <Compile Include="Model\Enums\EducationForm.cs" />
+        <Compile Include="Model\Enums\Genre.cs" />
+        <Compile Include="Model\Enums\Manufactures.cs" />
+        <Compile Include="Model\Enums\Season.cs" />
+        <Compile Include="Model\Enums\Weekday.cs" />
+        <Compile Include="Model\Geometry\CollisionManager.cs" />
+        <Compile Include="Model\Geometry\Point2D.cs" />
+        <Compile Include="Model\Geometry\Rectangle.cs" />
+        <Compile Include="Model\Geometry\RectangleFactory.cs" />
+        <Compile Include="Model\Geometry\Ring.cs" />
+        <Compile Include="Model\Subject.cs" />
+        <Compile Include="Model\Movie.cs" />
+        <Compile Include="Model\Route.cs" />
+        <Compile Include="Model\Song.cs" />
+        <Compile Include="Model\Time.cs" />
+        <Compile Include="Model\Validator.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="View\Controls\MovieControl.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="View\Controls\MovieControl.Designer.cs">
+          <DependentUpon>MovieControl.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\Controls\RectangleControl.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="View\Controls\RectangleControl.Designer.cs">
+          <DependentUpon>RectangleControl.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\Controls\RectanglesCollisionControl.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="View\Controls\RectanglesCollisionControl.Designer.cs">
+          <DependentUpon>RectanglesCollisionControl.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\Enums.cs" />
+        <Compile Include="View\MainForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="View\Controls\MovieControl.resx">
+          <DependentUpon>MovieControl.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Controls\RectangleControl.resx">
+          <DependentUpon>RectangleControl.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Controls\RectanglesCollisionControl.resx">
+          <DependentUpon>RectanglesCollisionControl.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Resources\rectangle_add_24x24.png" />
+      <Content Include="Resources\rectangle_add_24x24_uncolor.png" />
+      <Content Include="Resources\rectangle_edit_24x24.png" />
+      <Content Include="Resources\rectangle_edit_24x24_uncolor.png" />
+      <Content Include="Resources\rectangle_remove_24x24.png" />
+      <Content Include="Resources\rectangle_remove_24x24_uncolor.png" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
